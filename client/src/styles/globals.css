@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light Theme - Candilicious Colors */
+  --font-size: 16px;
+  --background: #FFF8F0;
+  --foreground: #3E2723;
+  --card: #FFFFFF;
+  --card-foreground: #3E2723;
+  --popover: #FFFFFF;
+  --popover-foreground: #3E2723;
+  --primary: #D97733;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5CBA7;
+  --secondary-foreground: #3E2723;
+  --muted: #E0D6C8;
+  --muted-foreground: #7B6F63;
+  --accent: #FFD580;
+  --accent-foreground: #3E2723;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #E0D6C8;
+  --input: transparent;
+  --input-background: #FFFFFF;
+  --switch-background: #E0D6C8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #FFD580;
+  --chart-1: #E67E22;
+  --chart-2: #F5CBA7;
+  --chart-3: #FFD580;
+  --chart-4: #7B6F63;
+  --chart-5: #3E2723;
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #3E2723;
+  --sidebar-primary: #E67E22;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5CBA7;
+  --sidebar-accent-foreground: #3E2723;
+  --sidebar-border: #E0D6C8;
+  --sidebar-ring: #FFD580;
+  
+  /* Custom candle glow color */
+  --glow: #FFB84D;
+}
+
+.dark {
+  /* Dark Theme - Candilicious Colors */
+  --background: #1C1B1A;
+  --foreground: #F8EDE3;
+  --card: #3E2E24;
+  --card-foreground: #F8EDE3;
+  --popover: #3E2E24;
+  --popover-foreground: #F8EDE3;
+  --primary: #E8964E;
+  --primary-foreground: #1C1B1A;
+  --secondary: #3E2E24;
+  --secondary-foreground: #F8EDE3;
+  --muted: #3E2E24;
+  --muted-foreground: #CBBBA0;
+  --accent: #D4A373;
+  --accent-foreground: #1C1B1A;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #3E2E24;
+  --input: transparent;
+  --input-background: #3E2E24;
+  --ring: #D4A373;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #F5B041;
+  --chart-2: #D4A373;
+  --chart-3: #3E2E24;
+  --chart-4: #CBBBA0;
+  --chart-5: #F8EDE3;
+  --sidebar: #3E2E24;
+  --sidebar-foreground: #F8EDE3;
+  --sidebar-primary: #F5B041;
+  --sidebar-primary-foreground: #1C1B1A;
+  --sidebar-accent: #D4A373;
+  --sidebar-accent-foreground: #1C1B1A;
+  --sidebar-border: #3E2E24;
+  --sidebar-ring: #D4A373;
+  
+  /* Custom candle glow color */
+  --glow: #FFB84D;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.7;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Custom animations for candle flicker effect */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 184, 77, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 184, 77, 0.5); }
+}
+
+.candle-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.candle-flicker {
+  animation: flicker 2s ease-in-out infinite;
+}
