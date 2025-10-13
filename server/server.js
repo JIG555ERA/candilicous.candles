@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-app.use("/miv/payments", paymentRouter);
+app.use("/cc/payments", paymentRouter);
 
 export default app;
 // app.listen(5000, () => {
