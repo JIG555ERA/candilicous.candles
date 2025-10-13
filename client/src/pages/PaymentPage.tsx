@@ -26,10 +26,10 @@ declare global {
 }
 
 // NOTE: Replace this with your actual Razorpay Key ID
-const RAZORPAY_KEY_ID = 'rzp_test_YourKeyIdHere'; 
+const RAZORPAY_KEY_ID = ' rzp_live_RRSENKLbBlakWE'; 
 
 // The backend endpoint for creating the order
-const ORDER_API_URL = 'https://candilicous-candles-server.vercel.app/cc/payments/order-items';
+const ORDER_API_URL = 'https://candilicous-candles-server.vercel.app/cc/payments/create-order';
 // The backend endpoint for verifying the payment (You must implement this on your server)
 const VERIFY_API_URL = 'https://candilicous-candles-server.vercel.app/cc/payments/verify';
 
@@ -54,7 +54,7 @@ export function PaymentPage() {
   // We'll proceed with USD price calculation but ensure the Razorpay integration works.
   const shipping = subtotal >= 50 ? 0 : 5.99;
   const total = subtotal + shipping;
-  const totalInPaise = Math.round(total * 100); // Razorpay requires amount in paise
+  const totalInPaise = Math.round(total); // Razorpay requires amount in paise
 
   // --- Utility Functions ---
 
@@ -353,7 +353,7 @@ export function PaymentPage() {
                                 </Button>
                               </div>
                               <span className="font-medium text-sm">
-                                ${(item.price * item.quantity).toFixed(2)}
+                                ₹{(item.price * item.quantity).toFixed(2)}
                               </span>
                             </div>
                           </div>
@@ -367,7 +367,7 @@ export function PaymentPage() {
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Subtotal</span>
-                        <span>${subtotal.toFixed(2)}</span>
+                        <span>₹{subtotal.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Shipping</span>
@@ -381,7 +381,7 @@ export function PaymentPage() {
                       <Separator />
                       <div className="flex justify-between font-medium text-base">
                         <span>Total</span>
-                        <span className="text-primary">${total.toFixed(2)}</span>
+                        <span className="text-primary">₹{total.toFixed(2)}</span>
                       </div>
                     </div>
                   </>
