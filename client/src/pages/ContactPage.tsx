@@ -103,9 +103,9 @@ export function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Visit Our Studio</h3>
                     <p className="text-sm text-muted-foreground">
-                      123 Candle Lane<br />
-                      Artisan District<br />
-                      Portland, OR 97201
+                      Garodia Nagar<br />
+                      Ghatkopar East<br />
+                      Mumbai, Maharashtra 400077
                     </p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Email Us</h3>
                     <p className="text-sm text-muted-foreground">
-                      hello@candilicious.com
+                      candilicous.candles@gmail.com
                     </p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Call Us</h3>
                     <p className="text-sm text-muted-foreground">
-                      +1 (555) 123-4567
+                      +91 86570 95206
                     </p>
                   </div>
                 </div>

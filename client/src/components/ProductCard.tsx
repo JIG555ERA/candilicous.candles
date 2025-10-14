@@ -41,7 +41,7 @@ export function ProductCard({ id, name, scent, price, image, featured }: Product
         <h3 className="font-['Playfair_Display'] mb-1">{name}</h3>
         <p className="text-sm text-muted-foreground mb-3">{scent}</p>
         <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold text-primary">${price.toFixed(2)}</span>
+          <span className="text-lg font-semibold text-primary">₹{price.toFixed(2)}</span>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">

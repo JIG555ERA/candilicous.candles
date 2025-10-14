@@ -278,7 +278,7 @@ export function PaymentPage() {
                     style={{ backgroundColor: '#0D6EFD' }}
                     disabled={isProcessing || cart.length === 0}
                   >
-                    {isProcessing ? 'Processing...' : `Pay Securely · $${total.toFixed(2)}`}
+                    {isProcessing ? 'Processing...' : `Pay Securely · ₹${total.toFixed(2)}`}
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
                     Secure payment powered by Razorpay. Your information is encrypted and safe.
