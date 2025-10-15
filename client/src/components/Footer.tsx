@@ -74,15 +74,23 @@ export function Footer() {
               Join our community and get inspired by candlelit moments.
             </p>
             <div className="flex gap-3">
-              <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
+              <a href="https://www.instagram.com/candilicous.candles05/">
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
                 <Instagram className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
+              </a>
+              {/* <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
                 <Facebook className="h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
-                <Mail className="h-5 w-5" />
-              </Button>
+              </Button> */}
+              <a href="mailto:candilicous.candles@gmail.com" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                >
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
