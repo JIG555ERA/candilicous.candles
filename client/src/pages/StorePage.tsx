@@ -3,6 +3,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Input } from '../components/ui/input';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
+import candle02 from '../assets/products/candles_02.jpg';
+import candle03 from '../assets/products/candles_03.jpg';
+import candle05 from '../assets/products/candles_05.jpg';
+import candle06 from '../assets/products/candles_06.jpg';
 
 const allProducts = [
   {
@@ -10,16 +14,16 @@ const allProducts = [
     name: 'Lavender Dreams',
     scent: 'Lavender, Vanilla & Chamomile',
     price: 229,
-    image: 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle06 || 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
     category: 'Floral',
   },
   {
     id: '2',
-    name: 'Autumn Spice',
+    name: 'Candle Diyas',
     scent: 'Cinnamon, Clove & Nutmeg',
     price: 279,
-    image: 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle03 || 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
     category: 'Spicy',
   },
@@ -28,7 +32,7 @@ const allProducts = [
     name: 'Ocean Breeze',
     scent: 'Sea Salt, Jasmine & Driftwood',
     price: 299,
-    image: 'https://images.unsplash.com/photo-1701987432961-831aa2aa9b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5kbGUlMjBjb2xsZWN0aW9uJTIwaG9tZXxlbnwxfHx8fDE3NjAwMzEyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle02 || 'https://images.unsplash.com/photo-1701987432961-831aa2aa9b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5kbGUlMjBjb2xsZWN0aW9uJTIwaG9tZXxlbnwxfHx8fDE3NjAwMzEyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
     category: 'Fresh',
   },
@@ -37,7 +41,7 @@ const allProducts = [
     name: 'Vanilla Bean',
     scent: 'Madagascar Vanilla & Cream',
     price: 319,
-    image: 'https://images.unsplash.com/photo-1669151432266-cd991ea149ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwY2FuZGxlJTIwbWFraW5nfGVufDF8fHx8MTc2MDAzMTIyM3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle05 || 'https://images.unsplash.com/photo-1669151432266-cd991ea149ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwY2FuZGxlJTIwbWFraW5nfGVufDF8fHx8MTc2MDAzMTIyM3ww&ixlib=rb-4.1.0&q=80&w=1080',
     category: 'Sweet',
   },
   {
@@ -48,22 +52,22 @@ const allProducts = [
     image: 'https://images.unsplash.com/photo-1724252102086-34acb811a675?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwc295JTIwY2FuZGxlfGVufDF8fHx8MTc2MDAzMTIyNHww&ixlib=rb-4.1.0&q=80&w=1080',
     category: 'Woody',
   },
-  {
-    id: '6',
-    name: 'Rose Garden',
-    scent: 'Rose Petals, Peony & Bergamot',
-    price: 279,
-    image: 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
-    category: 'Floral',
-  },
-  {
-    id: '7',
-    name: 'Coffee House',
-    scent: 'Espresso, Caramel & Cocoa',
-    price: 249,
-    image: 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    category: 'Gourmand',
-  },
+  // {
+  //   id: '6',
+  //   name: 'Rose Garden',
+  //   scent: 'Rose Petals, Peony & Bergamot',
+  //   price: 279,
+  //   image: 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
+  //   category: 'Floral',
+  // },
+  // {
+  //   id: '7',
+  //   name: 'Coffee House',
+  //   scent: 'Espresso, Caramel & Cocoa',
+  //   price: 249,
+  //   image: 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+  //   category: 'Gourmand',
+  // },
   {
     id: '8',
     name: 'Citrus Burst',

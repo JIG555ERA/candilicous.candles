@@ -3,6 +3,9 @@ import { ProductCard } from '../components/ProductCard';
 import { ArrowRight, Sparkles, Heart, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import candle02 from '../assets/products/candles_02.jpg';
+import candle03 from '../assets/products/candles_03.jpg';
+import candle06 from '../assets/products/candles_06.jpg';
 
 const featuredProducts = [
   {
@@ -10,7 +13,7 @@ const featuredProducts = [
     name: 'Lavender Dreams',
     scent: 'Lavender, Vanilla & Chamomile',
     price: 249,
-    image: 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle06 || 'https://images.unsplash.com/photo-1707839568431-c2648f6d5184?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzY2VudGVkJTIwY2FuZGxlfGVufDF8fHx8MTc1OTk0MTQxNXww&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
   },
   {
@@ -18,15 +21,15 @@ const featuredProducts = [
     name: 'Autumn Spice',
     scent: 'Cinnamon, Clove & Nutmeg',
     price: 269,
-    image: 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle02 || 'https://images.unsplash.com/photo-1704573982777-770d486a91c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGNhbmRsZSUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjAwMzEyMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
   },
   {
     id: '3',
-    name: 'Ocean Breeze',
+    name: 'Candle Diyas',
     scent: 'Sea Salt, Jasmine & Driftwood',
     price: 229,
-    image: 'https://images.unsplash.com/photo-1701987432961-831aa2aa9b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5kbGUlMjBjb2xsZWN0aW9uJTIwaG9tZXxlbnwxfHx8fDE3NjAwMzEyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: candle03 || 'https://images.unsplash.com/photo-1701987432961-831aa2aa9b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5kbGUlMjBjb2xsZWN0aW9uJTIwaG9tZXxlbnwxfHx8fDE3NjAwMzEyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
     featured: true,
   },
 ];
